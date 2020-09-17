@@ -905,7 +905,7 @@ a{
 		
 		position: absolute;
 		right: 0;
-		top: 100px;
+		top: 100%;
 		z-index: 10;
 
 		color: #ffffff;

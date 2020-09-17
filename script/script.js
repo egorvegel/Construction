@@ -68,7 +68,7 @@ $(function () {
 	/* Lazy Load */
 	const imagesLazyLoad = document.querySelectorAll('.article_img img, .pics img');
 	console.log(imagesLazyLoad);
-	function HandlerLazyLoad(images) {
+	function handlerLazyLoad(images) {
 		images.forEach(img => {
 			img.src = img.getAttribute('data-img');
 		});
@@ -85,7 +85,7 @@ $(function () {
 	function chechBtnUp() {
 		if ($(this).scrollTop() > 882) {
 			$('.btn_Up').addClass('show');
-			HandlerLazyLoad(imagesLazyLoad);
+			handlerLazyLoad(imagesLazyLoad);
 		} else {
 			$('.btn_Up').removeClass('show');
 		}
