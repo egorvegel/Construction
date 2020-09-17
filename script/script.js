@@ -1,6 +1,5 @@
 $(function () {
 	/* Меню */
-	const imagesLazyLoad = document.querySelectorAll('.article_img img');
 	let nav = $('.nav');
 	$('.nav_btn').on('click', function (evt) {
 		evt.preventDefault();
@@ -66,6 +65,15 @@ $(function () {
 		$(this).addClass('active');
 	})
 
+	/* Lazy Load */
+	const imagesLazyLoad = document.querySelectorAll('.article_img img, .pics img');
+	console.log(imagesLazyLoad);
+	function HandlerLazyLoad(images) {
+		images.forEach(img => {
+			img.src = img.getAttribute('data-img');
+		});
+	}
+
 	/* BTNUP */
 	$('.btn_Up').on('click', function (evt) {
 		evt.preventDefault();
@@ -87,11 +95,4 @@ $(function () {
 		chechBtnUp();
 	})
 	chechBtnUp();
-	/* Lazy Load */
-	function HandlerLazyLoad(images) {
-		console.log(images);
-		images.forEach(img => {
-			img.src = img.getAttribute('data-img');
-		});
-	}
 })
