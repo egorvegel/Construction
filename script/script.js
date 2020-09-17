@@ -1,5 +1,6 @@
 $(function () {
 	/* Меню */
+	const imagesLazyLoad = document.querySelectorAll('.article_img img');
 	let nav = $('.nav');
 	$('.nav_btn').on('click', function (evt) {
 		evt.preventDefault();
@@ -75,8 +76,8 @@ $(function () {
 
 	function chechBtnUp() {
 		if ($(this).scrollTop() > 882) {
-			console.log(1);
 			$('.btn_Up').addClass('show');
+			HandlerLazyLoad(imagesLazyLoad);
 		} else {
 			$('.btn_Up').removeClass('show');
 		}
@@ -86,4 +87,11 @@ $(function () {
 		chechBtnUp();
 	})
 	chechBtnUp();
+	/* Lazy Load */
+	function HandlerLazyLoad(images) {
+		console.log(images);
+		images.forEach(img => {
+			img.src = img.getAttribute('data-img');
+		});
+	}
 })
