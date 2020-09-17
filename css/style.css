@@ -741,6 +741,7 @@ a{
 }
 
 .contacts_form_submit{
+	-webkit-appearance: none;
 	flex-basis: 15px;
 	height: 50px;
 	padding: 10px 30px;
