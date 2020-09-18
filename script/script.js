@@ -65,14 +65,9 @@ $(function () {
 		$(this).addClass('active');
 	})
 
-	/* Lazy Load */
-	const imagesLazyLoad = document.querySelectorAll('.article_img img, .pics img');
-	console.log(imagesLazyLoad);
-	function handlerLazyLoad(images) {
-		images.forEach(img => {
-			img.src = img.getAttribute('data-img');
-		});
-	}
+
+
+
 
 	/* BTNUP */
 	$('.btn_Up').on('click', function (evt) {
@@ -89,6 +84,14 @@ $(function () {
 		} else {
 			$('.btn_Up').removeClass('show');
 		}
+	}
+
+	/* Lazy Load */
+	const imagesLazyLoad = document.querySelectorAll('.article_img img, .pics img');
+	function handlerLazyLoad(images) {
+		images.forEach(img => {
+			img.src = img.getAttribute('data-img');
+		});
 	}
 
 	$(window).on('scroll', function () {
